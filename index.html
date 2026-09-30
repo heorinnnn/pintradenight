@@ -59,14 +59,16 @@
             max-width: 580px;
             height: auto;
             object-fit: contain;
+            mix-blend-mode: screen; /* 이미지 어두운 경계선 제거 효과 */
             filter: drop-shadow(0 0 12px rgba(255, 107, 0, 0.6));
-            margin-bottom: 24px; /* 글자 이미지 아래로 여백 추가 */
+            margin-bottom: 24px;
         }
 
         .main-logo-img {
             width: 250px;
             max-width: 80%;
             height: auto;
+            mix-blend-mode: screen; /* 이미지 어두운 경계선 제거 효과 */
             filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.7));
         }
 
@@ -310,7 +312,7 @@
             });
         }
 
-        const TOTAL_NUMBERS = 30; // 최고 번호 30으로 수정
+        const TOTAL_NUMBERS = 30;
         let availableNumbers = Array.from({length: TOTAL_NUMBERS}, (_, i) => i + 1);
         let drawnNumbers = [];
         let isSpinning = false;
@@ -380,7 +382,7 @@
                 const totalItems = 30 + reelIdx * 10; 
                 for (let i = 1; i < totalItems; i++) {
                     const isImg = (i % 3 === 0);
-                    const randomNum = Math.floor(Math.random() * TOTAL_NUMBERS) + 1; // 1~30 랜덤 숫자 생성
+                    const randomNum = Math.floor(Math.random() * TOTAL_NUMBERS) + 1;
                     strip.appendChild(createItemNode(isImg ? 'IMAGE' : randomNum));
                 }
 
