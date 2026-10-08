@@ -266,7 +266,7 @@
         <div class="history-container">
             <div class="history-title">
                 <span>뽑힌 번호 목록</span>
-                <span id="remainingCount">남은 숫자: 30개</span>
+                <span id="remainingCount">남은 숫자: 20개</span>
             </div>
             <div class="history-tags" id="historyTags"></div>
         </div>
@@ -312,7 +312,8 @@
             });
         }
 
-        const TOTAL_NUMBERS = 30;
+        // 최대 숫자를 20으로 변경
+        const TOTAL_NUMBERS = 20;
         let availableNumbers = Array.from({length: TOTAL_NUMBERS}, (_, i) => i + 1);
         let drawnNumbers = [];
         let isSpinning = false;
